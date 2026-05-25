@@ -51,4 +51,38 @@ variable "db_subnet_has_nat_route" {
   default     = false
 }
 
+variable "app_port" {
+  description = "Application port. Used only when direct app access is enabled."
+  type        = number
+  default     = 8000
+}
 
+variable "db_port" {
+  description = "PostgreSQL port allowed from app security group to DB security group."
+  type        = number
+  default     = 5432
+}
+
+variable "ssh_allowed_cidr" {
+  description = "Optional CIDR allowed to SSH into app instances. Use null to disable."
+  type        = string
+  default     = null
+}
+
+variable "app_allowed_cidr" {
+  description = "Optional CIDR allowed to access the app port directly. Use null to disable."
+  type        = string
+  default     = null
+}
+
+variable "db_ssh_allowed_cidr" {
+  description = "Optional CIDR allowed to SSH into DB instances. Use null to disable."
+  type        = string
+  default     = null
+}
+
+variable "db_port_allowed_cidr" {
+  description = "Optional CIDR allowed to access the DB port directly. Use null to disable."
+  type        = string
+  default     = null
+}
