@@ -1,0 +1,47 @@
+# --- Terraform core ---
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+*.tfplan
+*.plan
+plan.out
+
+# --- Terraform CLI / crash artifacts ---
+crash.log
+crash.*.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# --- Local-only variable and secret files ---
+*.auto.tfvars
+*.auto.tfvars.json
+*.secret.tfvars
+*.secrets.tfvars
+secret.tfvars
+secrets.tfvars
+local.tfvars
+local.auto.tfvars
+.env.tfvars
+.envrc
+
+# --- Terraform Cloud / Enterprise credentials ---
+.terraformrc
+terraform.rc
+credentials.tfrc.json
+
+# --- Sensitive ad hoc exports often produced around Terraform workflows ---
+*.pem
+*.key
+*.p12
+*.kubeconfig
+*_credentials.csv
+*_accessKeys.csv
+
+# --- Editor/OS noise ---
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*~
