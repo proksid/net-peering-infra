@@ -28,3 +28,27 @@ variable "public_subnet_cidr" {
   description = "CIDR block for the public subnet."
   type        = string
 }
+
+variable "private_app_subnet_cidr" {
+  description = "CIDR block for the private application subnet."
+  type        = string
+}
+
+variable "private_db_subnet_cidr" {
+  description = "CIDR block for the private database subnet."
+  type        = string
+}
+
+variable "app_subnet_has_nat_route" {
+  description = "Whether the private app subnet should have a default route to the NAT Gateway for outbound internet access."
+  type        = bool
+  default     = true
+}
+
+variable "db_subnet_has_nat_route" {
+  description = "Whether the private DB subnet should have a default route to the NAT Gateway for outbound internet access."
+  type        = bool
+  default     = false
+}
+
+
