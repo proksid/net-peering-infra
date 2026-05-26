@@ -14,7 +14,7 @@ module "network" {
   db_subnet_has_nat_route  = var.db_subnet_has_nat_route
 
   app_port = var.app_port
-  db_port  = var.postgres_port
+  db_port  = var.db_port
 
   ssh_allowed_cidr     = var.ssh_allowed_cidr
   app_allowed_cidr     = var.app_allowed_cidr
