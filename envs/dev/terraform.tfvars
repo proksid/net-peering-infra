@@ -1,5 +1,6 @@
 environment       = "dev"
-availability_zone = "ca-central-1"
+aws_region = "ca-central-1"
+availability_zone = "ca-central-1d"
 
 vpc_cidr                = "10.10.0.0/16"
 public_subnet_cidr      = "10.10.1.0/24"

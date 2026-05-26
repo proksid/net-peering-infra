@@ -29,6 +29,11 @@ variable "private_db_subnet_cidr" {
   type        = string
 }
 
+variable "aws_region" {
+  description = "AWS region for the deployment, e.g. ca-central-1."
+  type        = string
+}
+
 variable "availability_zone" {
   description = "Availability zone for the deployment, e.g. ca-central-1a."
   type        = string
