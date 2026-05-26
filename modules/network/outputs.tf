@@ -43,6 +43,11 @@ output "nat_gateway_id" {
   value       = try(aws_nat_gateway.this[0].id, null)
 }
 
+output "nat_public_ip" {
+  description = "Public IP of the NAT Gateway EIP, if created."
+  value       = try(aws_eip.nat[0].public_ip, null)
+}
+
 output "app_route_table_id" {
   description = "Private app route table ID."
   value       = aws_route_table.private_app.id
