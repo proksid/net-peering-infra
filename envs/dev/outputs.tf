@@ -41,6 +41,11 @@ output "nat_gateway_id" {
   value       = module.network.nat_gateway_id
 }
 
+output "nat_public_ip" {
+  description = "Public IP of the NAT Gateway, if created."
+  value       = module.network.nat_public_ip
+}
+
 # -------------------------
 # App instance outputs
 # -------------------------
