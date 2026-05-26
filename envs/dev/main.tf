@@ -23,3 +23,38 @@ module "network" {
 
   tags = local.tags
 }
+
+data "aws_ami" "amazon_linux" {
+  most_recent = true
+  owners      = ["amazon"]
+
+  filter {
+    name   = "name"
+    values = ["al2023-ami-*"]
+  }
+
+  filter {
+    name   = "architecture"
+    values = ["x86_64"]
+  }
+}
+
+module "app_instance" {
+  source = "../../modules/instance"
+  name        = "app"
+  role        = "app"
+  environment = var.environment
+
+  ami_id             = data.aws_ami.amazon_linux.id
+  instance_type      = var.app_instance_type
+  subnet_id          = module.network.private_app_subnet_id
+  security_group_ids = [module.network.app_security_group_id]
+
+  key_name           = null
+  # user_data = templatefile("${path.module}/user_data/app.sh.tftpl", {
+  #   name     = "app"
+  #   app_port = var.app_port
+  # })
+
+  tags = local.tags
+}

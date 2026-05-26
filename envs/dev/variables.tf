@@ -86,3 +86,9 @@ variable "db_port_allowed_cidr" {
   type        = string
   default     = null
 }
+
+variable "app_instance_type" {
+    description = "EC2 instance type for app instances."
+    type        = string
+    default     = "t3.micro"
+}
